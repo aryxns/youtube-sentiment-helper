@@ -1,5 +1,6 @@
 from setuptools import setup
 from setuptools.command.install import install
+import nltk
 
 def readme():
       with open('README.md') as f:
@@ -7,7 +8,6 @@ def readme():
 
 def post_install():
       """Post installation nltk corpus downloads."""
-      import nltk
       nltk.download("punkt")
       nltk.download('words')
       nltk.download('maxent_ne_chunker')
